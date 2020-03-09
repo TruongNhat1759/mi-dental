@@ -1,0 +1,9 @@
+@media print {
+	#header, #mainvisual, .mainvisual, #main, #gnavi, #footer {
+		display: none;
+	}
+	#print {
+		max-width: 1075px;
+		display: block;
+	}
+}

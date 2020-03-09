@@ -1,0 +1,109 @@
+.accordionWrapper {
+    display: block;
+    overflow: hidden;
+    border-top: 1px solid #8C6637;
+}
+.accordionWrapper .set {
+	float: left;
+	width: 50px;
+	position: relative;
+	overflow: hidden;
+	height: 259px;
+	transition: all 0.4s linear;
+}
+.accordionWrapper .set .title {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	z-index: 10;
+	cursor: pointer;
+	transition: all 0.4s linear;
+}
+.accordionWrapper .set .content span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 140px;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 0.85em;
+	color: #fff;
+	opacity: 0;
+	transition: all 0.4s linear;
+}
+.accordionWrapper .set .content {
+	position: relative;
+	width: 50px;
+	height: 100%;
+	transition: all 0.4s linear;
+}
+.accordionWrapper .set .content img {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	max-width: 650px;
+}
+.accordionWrapper .set.active {
+	width: 650px;
+}
+.accordionWrapper .set.active .title {
+	opacity: 0;
+	cursor: unset;
+	pointer-events: none;
+}
+.accordionWrapper .set.active .content {
+	width: 650px;
+}
+.accordionWrapper .set.active .content span {
+	opacity: 0.8;
+}
+@media screen and (min-width: 641px) and (max-width: 1460px) {
+	.accordionWrapper .set.active {
+		width: calc(100% - 100px);
+	}
+	.accordionWrapper .set.active .content {
+		width: 100%;
+	}
+	.accordionWrapper .set .content span {
+		font-size: 90px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.accordionWrapper .set {
+		width: 35px;
+		height: 180px;
+		transition: width 0.4s ease;
+	}
+	.accordionWrapper .set.active {
+		width: calc(100% - 70px);
+	}
+	.accordionWrapper .set .content img {
+		opacity: 0;
+	}
+	.accordionWrapper .set .title {
+		width: 35px;
+	}
+	.accordionWrapper .set .content {
+		transition: none;
+	}
+	.accordionWrapper .set.active .content {
+		width: 100%;
+		background: url('../images/b03_img03.jpg') center no-repeat;
+		background-size: cover;
+	}
+	.accordionWrapper .set .content span {
+	  font-size: 70px;
+	  top: 10px;
+	  left: 10px;
+	}
+	.accordionWrapper .set:nth-child(2).active .content {
+		background: url('../images/b03_img04.jpg') center no-repeat;
+		background-size: cover;
+	}
+	.accordionWrapper .set:nth-child(3).active .content {
+		background: url('../images/b03_img05.jpg') center no-repeat;
+		background-size: cover;
+	}
+}
